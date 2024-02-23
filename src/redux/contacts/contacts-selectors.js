@@ -5,11 +5,11 @@ export const selectFilteredContacts = store => {
     const { items } = contacts;
 
     if (!filter) {
-        return { ...contacts };
+        return contacts;
     }
 
     const normalizedFilter = filter.toLowerCase();
-
+    
     const filteredContacts = items.filter(({ name, number }) => {
         const normalizedName = name.toLowerCase();
         const normalizedNumber = number.toLowerCase();
